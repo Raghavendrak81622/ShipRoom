@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shiproom"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+shiproom = "shiproom.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["shiproom*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "demo_service/tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+exclude = [".demo", "artifacts", ".venv"]
